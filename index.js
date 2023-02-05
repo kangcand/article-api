@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-const appRoute = require('./src/routes/articleRoutes');
+const appRoute = require('./src/routes/routes-article');
 app.use('/', appRoute);
 
 var port = process.env.PORT

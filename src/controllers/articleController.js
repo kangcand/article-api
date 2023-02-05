@@ -2,6 +2,7 @@ const config = require('../configs/database');
 const mysql = require('mysql2');
 const pool = mysql.createPool(config);
 
+
 pool.on('error', (err) => {
     console.log(err)
 });
