@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kangcand/article-api#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql2": "^3.1.0",
     "nodemon": "^2.0.20",
@@ -26,3 +27,4 @@
     "vercel": "^28.15.0"
   }
 }
+

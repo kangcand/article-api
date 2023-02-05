@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const {
-    movie
+    article
 } = require('../controllers');
 
 /// CRUD operation for produk table
-router.get('/articles', movie.getAllMovie);
-router.post('/articles', movie.newMovie);
-router.patch('/articles/:id', movie.updateMovie);
-router.delete('/articles/:id', movie.deleteMovie);
+router.get('/articles', article.getAllArticle);
+router.post('/articles', article.newArticle);
+router.patch('/articles/:id', article.updateArticle);
+router.delete('/articles/:id', article.deleteArticle);
 
 module.exports = router;
