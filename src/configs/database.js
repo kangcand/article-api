@@ -6,3 +6,12 @@ module.exports = {
     database: 'railway',
     port: 6069,
 }
+
+// module.exports = {
+//     multipleStatements: true,
+//     host: '127.0.0.1',
+//     user: 'root',
+//     password: '',
+//     database: 'api',
+//     port: 3306,
+// }

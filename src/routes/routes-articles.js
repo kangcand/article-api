@@ -4,6 +4,7 @@ const {
 } = require('../controllers');
 
 router.get('/articles', article.getAllArticle);
+router.get('/article/:id', article.showArticle);
 router.post('/article', article.newArticle);
 router.patch('/article/:id', article.updateArticle);
 router.delete('/article/:id', article.deleteArticle);

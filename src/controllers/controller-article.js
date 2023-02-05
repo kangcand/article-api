@@ -8,11 +8,31 @@ pool.on('error', (err) => {
 });
 
 module.exports = {
+    
     getAllArticle(req, res) {
         pool.getConnection(function (err, connection) {
             if (err) throw err;
             const query = 'SELECT * FROM articles';
             connection.query(query, function (err, result) {
+                if (err) throw err;
+
+                res.send({
+                    success: true,
+                    message: 'Fetch data successfully',
+                    data: result
+                })
+            })
+
+            connection.release();
+        })
+    },
+
+    showArticle(req, res) {
+        const id = req.params.id;
+        pool.getConnection(function (err, connection) {
+            if (err) throw err;
+            const query = 'SELECT * FROM articles WHERE id = ? ';
+            connection.query(query ,[id], function (err, result) {
                 if (err) throw err;
 
                 res.send({
@@ -39,12 +59,13 @@ module.exports = {
         pool.getConnection(function (err, connection) {
             if (err) console.log(err);
 
-            const query = 'INSERT INTO movies (title, category, description, date, cover) VALUES (?, ?, ?, ?, ?, ?)';
-            connection.query(query, [title,
+            const query = 'INSERT INTO articles (title, category, description, date, cover) VALUES (?, ?, ?, ?, ?)';
+            connection.query(query, [
+                title,
                 category,
                 description,
                 date,
-                cover,], function (err, result) {
+                cover], function (err, result) {
                     if (err) console.log(err);
 
                     res.send({
@@ -72,7 +93,7 @@ module.exports = {
         pool.getConnection(function (err, connection) {
             if (err) throw err;
 
-            const query = 'UPDATE movies SET ? WHERE id = ? ';
+            const query = 'UPDATE articles SET ? WHERE id = ? ';
             connection.query(query, [data, id], function (err, result) {
                 if (err) throw err;
 
@@ -96,7 +117,7 @@ module.exports = {
         pool.getConnection(function (err, connection) {
             if (err) throw err;
 
-            const query = 'DELETE FROM movies WHERE id = ?';
+            const query = 'DELETE FROM articles WHERE id = ?';
             connection.query(query, [id], function (err, result) {
                 if (err) throw err;
 

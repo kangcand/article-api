@@ -7,10 +7,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-const appRoute = require('./src/routes/routes-article');
+const appRoute = require('./src/routes/routes-articles');
 app.use('/', appRoute);
 
-var port = process.env.PORT
-// var port = 8080
+// var port = process.env.PORT
+var port = 8080
 
 app.listen(port, () => console.log(`App running on port : ${port}`));

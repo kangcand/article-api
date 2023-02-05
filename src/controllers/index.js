@@ -1,4 +1,4 @@
-const article = require('./');
+const article = require('./controller-article');
 
 module.exports = {
     article
