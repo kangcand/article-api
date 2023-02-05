@@ -65,7 +65,7 @@ module.exports = {
             category: req.body.category,
             description: req.body.description,
             date: req.body.date,
-            synopsis: req.body.synopsis,
+            cover: req.body.cover,
         }
 
         pool.getConnection(function (err, connection) {
