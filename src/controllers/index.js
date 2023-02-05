@@ -1,5 +1,5 @@
-const movie = require('./articleController');
+const article = require('./articleController');
 
 module.exports = {
-    movie
+    article
 };
